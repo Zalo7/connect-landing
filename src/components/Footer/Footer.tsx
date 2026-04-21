@@ -70,7 +70,7 @@ export default function Footer() {
 
           <div className="mt-12 flex gap-5 lg:mt-16 lg:gap-6" aria-label="Redes sociales">
             <a
-              href="#"
+              href="https://www.instagram.com/connect.fo/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -79,7 +79,7 @@ export default function Footer() {
               <IconInstagram />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/connect.fo/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
