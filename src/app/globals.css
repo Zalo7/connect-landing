@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Big John PRO ──────────────────────────────────────────
+   Colocá los archivos en src/fonts/:
+     BigJohnPRO-Regular.woff2  /  BigJohnPRO-Regular.woff
+     BigJohnPRO-Bold.woff2     /  BigJohnPRO-Bold.woff
+   Sin los archivos se usa el fallback "Barlow Condensed".
+─────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Big John PRO";
+  src: url("/fonts/BigJohnPRO-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Big John PRO";
+  src: url("/fonts/BigJohnPRO-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Big John PRO";
+  src: url("/fonts/BigJohnPRO-Bold.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Tailwind v4 theme tokens ──────────────────────────── */
+@theme {
+  /* Brand colors */
+  --color-brand-dark:          #1a063a;
+  --color-brand-purple-mid:    #5510a5;
+  --color-brand-purple-bright: #731af1;
+  --color-brand-yellow:        #cddf07;
+  --color-brand-lavender:      #e8dfff;
+
+  /* Font */
+  --font-display: "Big John PRO", "Barlow Condensed", sans-serif;
+
+  /* Spacing (4px grid extras) */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: #1a063a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ── Marquee ─────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+
+/* ── Utility: text stroke (outlined headings) ─────────────── */
+.text-stroke-dark {
+  -webkit-text-stroke: 1.5px #1a063a;
+  color: transparent;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 1.2px #ffffff;
+  color: transparent;
 }
