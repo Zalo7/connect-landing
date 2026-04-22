@@ -16,14 +16,16 @@ export default function Benefits() {
             delay={i * 120}
             className="flex flex-col items-center gap-8 text-center"
           >
-            <div className="flex h-44 w-full items-end justify-center lg:h-auto lg:items-center">
+            <div className="flex h-44 w-full items-end justify-center lg:h-56">
               <Image
                 src={b.icon}
                 alt=""
                 aria-hidden="true"
                 width={300}
                 height={300}
-                className="h-full w-auto object-contain drop-shadow-[0_10px_24px_rgba(85,16,165,0.3)] lg:h-auto lg:w-full lg:max-h-64"
+                className={`w-auto object-contain object-bottom drop-shadow-[0_10px_24px_rgba(85,16,165,0.3)] ${
+                  b.id === "speed" ? "h-[80%]" : b.id === "network" ? "h-[90%]" : "h-full"
+                }`}
               />
             </div>
             <h3 className="min-h-[3.6rem] font-display text-[1.5rem] font-bold uppercase leading-[1.1] text-[#1A063A] whitespace-pre-line lg:text-[1.75rem]">
